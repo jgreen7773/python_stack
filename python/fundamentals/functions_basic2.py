@@ -2,7 +2,7 @@
 # create a function that accepts a number as an input. Return a new list that counts down by one, from the argument given.
 def countdown(int):
     new_list1 = []
-    for x in range(int, 0, -1):
+    for x in range(int, -1, -1):
         new_list1.append([x])
     print(new_list1)
 
