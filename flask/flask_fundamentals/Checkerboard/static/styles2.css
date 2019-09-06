@@ -1,0 +1,58 @@
+*{
+    margin:auto;
+    padding:auto;
+}
+
+
+
+body{
+    background-color:rgb(41, 37, 83);
+}
+
+
+
+.checker_wrapper{
+    padding-top:200px;
+    width: 900px;
+    height: 900px;
+}
+
+
+
+.red{
+    width: 100px;
+    height: 100px;
+    background-color:rgb(168, 206, 107);
+    display:inline-block;
+    margin:-1px;
+}
+
+
+
+.black{
+    width: 100px;
+    height: 100px;
+    background-color:rgb(100, 91, 155);
+    display:inline-block;
+    margin:-1px;
+}
+
+
+
+.blck{
+    width: 100px;
+    height: 100px;
+    background-color:rgb(100, 91, 155);
+    display:inline-block;
+    margin:-1px;
+}
+
+
+
+.rd{
+    width: 100px;
+    height: 100px;
+    background-color:rgb(168, 206, 107);
+    display:inline-block;
+    margin:-1px;
+}

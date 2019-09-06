@@ -1,0 +1,50 @@
+*{
+    margin:auto;
+    padding:auto;
+}
+
+
+
+body{
+    background-color:rgb(41, 37, 83);
+}
+
+
+
+table{
+    padding-top:100px;
+    width: auto;
+    height: auto;
+}
+
+
+
+.color1{
+    width: 55px;
+    height: 55px;
+    background-color:rgb(190, 114, 0);
+}
+
+
+
+.color2{
+    width: 5px;
+    height: 55px;
+    background-color:rgb(66, 145, 134);
+}
+
+
+
+.blck{
+    width: 100px;
+    height: 100px;
+    background-color:rgb(66, 145, 134);
+}
+
+
+
+.rd{
+    width: 100px;
+    height: 100px;
+    background-color:rgb(190, 114, 0);
+}
