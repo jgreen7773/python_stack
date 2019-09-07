@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dojo Survey!</title>
+</head>
+<body style="background:rgb(33, 102, 102);padding: 145px 0px 0px 222px;">
+    <div style="border:2px dotted rgb(73, 39, 39);width:700px;height:555px;padding:55px;">
+        <h2 style="background:linear-gradient(to top,rgb(83, 107, 67),rgb(147, 150, 1),coral);width:333px;height:33px;padding:auto;text-align:center;border:1px solid coral;padding-top:5px;border-radius:5px;">Dojo Survey! </h2>
+        <form action='/result' method='POST' style="border:2px dotted rgb(73, 39, 39);padding:2px;">
+            {{ name_from_form }}<input type="text" name="name" value="Your Name:" style="height:15px;width:222px;display:block;margin: 30px 0px 10px 15px;">
+            {{ location_from_form }}<select name="location" style="height:15px;width:80px;display:inline-block;margin: 30px 0px 15px 17px;">Dojo Location: 
+                <option value="Seattle">Seattle</option>
+                <option value="San Jose">San Jose</option>
+                <option value="Dallas">Dallas</option>
+                <option value="Ryozan-paku">Ryozan-paku</option>
+            </select>
+            {{ language_from_form }}<select name="language" style="height:15px;width:80px;display:inline-block;margin: 30px 0px 15px 30px;">Favorite Language: 
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Python">Python</option>
+                <option value="React">React</option>
+                <option value="Ruby">Ruby</option>
+                <option value="C#">C#</option>
+                <option value="R">R</option>
+            </select>
+            {{ comments_from_form }}<p>Comment (optional):</p>
+            <textarea type="text" name="comments" style="height:90px;width:280px;display:block;margin: 5px 0px 60px 15px;"></textarea>
+            <input type='submit' value='create account' style="margin-left:240px;margin-bottom:15px;">
+        </form>
+    </div>
+</body>
+</html>

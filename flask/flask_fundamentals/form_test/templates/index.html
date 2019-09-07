@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(158, 93, 8);">
+    <h1 style="background-color: rgb(88, 119, 88);display:inline-block;border-radius:8px;margin-left:25px;width:300px;padding-left:50px;">Index Page</h1>
+    <h3>Create a User</h3>
+        <form action='/users' method='post'>
+        Name: {{ name_from_form }}<input type='text' name='name' style="height:22px;width:222px;border:2px solid grey;display:block;margin-bottom:25px;">
+        Email: {{ email_from_form }}<input type='email' name='email' style="height:22px;width:333px;border:2px solid grey;display:block;margin-bottom:25px;">
+        Password: {{ password_from_form }}<input type='password' name='password' style="height:22px;width:222px;border:2px solid grey;display:block;margin-bottom:25px;">
+        Confirm Password: {{ confirm_password_from_form }}<input type='password' name='password' style="height:22px;width:222px;border:2px solid grey;display:block;margin-bottom:25px;">
+        Upload a file: {{ file_upload_from_form }}<input type='file' name='user_upload'>
+        Select: {{ date_created_from_form }}<input type='datetime-local' name='date_created'>
+        <input type='image' src='124.jpg' alt='submit' style="height:80px;width:300px;">
+    </form>
+</body>
+</html>
