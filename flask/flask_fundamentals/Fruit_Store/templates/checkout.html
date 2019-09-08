@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dojo Fruit Store!</title>
+</head>
+<body style="height:970px;background:linear-gradient(to top, rgb(52, 52, 88), rgb(59, 88, 59), rgb(95, 95, 52))">
+    <div style="width:700px;height:333px;padding-left:55px;">
+        <h2 style="background:linear-gradient(to top, rgb(95,95,52),rgb(59,88,59),rgb(52,52,88));height:33px;width:360px;border-radius:5px;text-align:center;">Thank you for your order!</h2>
+        <p>Thank you, {{ name_post }}! Total items:{{ total_quantity }}. You will be charged directly from your student account balance.</p><p>TimeStamp: March 23rd at 5:25:33 PM.</p>
+        <h4 style="text-decoration-line:underline;margin: 40px 100px 0px 12px;">You've ordered</h4>
+        <table>
+            <tr>
+                <th style="border:1px dotted rgb(179, 123, 39);width:300px;text-align:center;">Fruit Name</th>
+                <th style="border:1px dotted rgb(179, 123, 39);width:300px;text-align:center;">Quantity</th>
+            </tr>
+            <tr>
+                <td style="border:1px dotted rgb(179, 123, 39);width:300px;text-align:center;">Strawberry</td>
+                <td style="border:1px dotted rgb(179, 123, 39);width:300px;text-align:center;">{{ qone_post }}</td>
+            </tr>
+            <tr>
+                <td style="border:1px dotted rgb(179, 123, 39);width:300px;text-align:center;">Raspberry</td>
+                <td style="border:1px dotted rgb(179, 123, 39);width:300px;text-align:center;">{{ qtwo_post }}</td>
+            </tr>
+            <tr>
+                <td style="border:1px dotted rgb(179, 123, 39);width:300px;text-align:center;">Apple</td>
+                <td style="border:1px dotted rgb(179, 123, 39);width:300px;text-align:center;">{{ qthree_post }}</td>
+            </tr>
+        </table>
+        <h5>Your Information</h5>
+        <table>
+            <tr>
+                <th style="display:inline-block;width:300px;height:25px;border:1px dotted rgb(179, 123, 39);text-align:center;">Name:</th>
+                <td style="display:inline-block;width:300px;height:25px;border:1px dotted rgb(179, 123, 39);text-align:center;">{{ name_post }}</td>
+            </tr>
+            <tr>
+                <th style="display:inline-block;width:300px;height:25px;border:1px dotted rgb(179, 123, 39);text-align:center;">Your Student ID:</th>
+                <td style="display:inline-block;width:300px;height:25px;border:1px dotted rgb(179, 123, 39);text-align:center;">{{ student_id_post }}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

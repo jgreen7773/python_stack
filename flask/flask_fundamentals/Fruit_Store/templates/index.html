@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dojo Fruit Store!</title>
+</head>
+<body style="height:970px;background:linear-gradient(to top, rgb(52, 52, 88), rgb(59, 88, 59), rgb(95, 95, 52))">
+    <div style="display:inline-block;width:700px;height:333px;margin:auto;padding-left:55px;">
+        <h2 style="background:linear-gradient(to top, rgb(95,95,52),rgb(59,88,59),rgb(52,52,88));height:33px;width:360px;border-radius:5px;text-align:center;">Dojo Fruit Store!</h2>
+        <h4 style="text-decoration-line:underline;margin: 40px 100px 0px 12px;">What would you like to buy?</h4>
+        <form action='/checkout' method='post'>
+            <table>
+                <tr>
+                    <th style="border:1px dotted rgb(179, 123, 39);width:300px;">Fruit Name</th>
+                    <th style="border:1px dotted rgb(179, 123, 39);width:300px;">Quantity</th>
+                </tr>
+                <tr>
+                    <td style="border:1px dotted rgb(179, 123, 39);width:300px;text-align:center;">Strawberry</td>
+                    <td style="border:1px dotted rgb(179, 123, 39);width:300px;text-align:center;">
+                        {{ qone }}<select name="qone">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border:1px dotted rgb(179, 123, 39);width:300px;text-align:center;">Raspberry</td>
+                    <td style="border:1px dotted rgb(179, 123, 39);width:300px;text-align:center;">
+                        {{ qtwo }}<select name="qtwo">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border:1px dotted rgb(179, 123, 39);width:300px;text-align:center;">Apple</td>
+                    <td style="border:1px dotted rgb(179, 123, 39);width:300px;text-align:center;">
+                        {{ qthree }}<select name="qthree">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <h5>Your Information</h5>
+            <p style="display:inline-block;width:44px;">Name:</p>
+            {{ username }}<input type="text" name="username" style="display:inline-block;width:200px;border-radius:15px;">
+            <p style="display:inline-block;width:110px;">Your Student ID:</p>
+            {{ student_id }}<input type="text" name="student_id" style="display:inline-block;width:200px;border-radius:15px;">
+            <input type="submit" value="Buy me stuff!" style="background:linear-gradient(to top, rgb(95,95,52),rgb(59,88,59),rgb(52,52,88));display:block;width: 150px;margin: 30px 0px 0px 429px;border-radius:15px;">
+        </form>
+    </div>
+    <div style="display:inline-block;width:200px;height:333px;background-color:rgb(88, 114, 85);border-radius:15px;">
+        <h5 style="margin: 35px 5px 35px 10px;">Welcome to Dojo Fruit Store!</h5>
+        <p style="margin: 5px 5px 35px 10px;">Your dojo decided to buy fruits for all the students! Please use this app to tell us what you would like to have! Once we get your order, we'll charge your student account automatically.</p>
+        <p style="margin: 5px 5px 0px 10px;">Dojo Fruit Store is proudly built using Flask.</p>
+        <a href="/fruits" style="padding-top:2px;border:1px solid white;text-align:center;font-size:12.9px;text-decoration-line:none;color:rgb(19, 18, 18);background:linear-gradient(to top, rgb(95,95,52),rgb(59,88,59),rgb(52,52,88));display:block;width: 150px;margin: 5px 0px 0px 27px;border-radius:15px;height:18px;">View our delicious fruits!</a>
+    </div>
+</body>
+</html>
