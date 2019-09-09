@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter</title>
+</head>
+<body style="background:cornsilk;height:980px;">
+    <h2 style="background:linear-gradient(to top,rgb(133, 163, 94),rgb(158, 158, 53),rgb(165, 117, 59));border-radius:20px;text-align:center;">Number of visits:</h2>
+    <p name="counter" style="text-align:center;">{{ session['counter'] }} time(s)</p>
+    <form action="counter2" style="display:inline-block;">
+        <input type="submit" value="+2" style="background:rgb(37, 179, 214);border-radius:20px;margin:auto;margin-left:280px;color:white;display:inline-block;">
+    </form>
+    <form action='/destroy_session' style="display:inline-block;">
+        <input type="submit" value="reset" style="background:rgb(37, 179, 214);border-radius:20px;margin:auto;color:white;">
+    </form>
+</body>
+</html>
