@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Great Number Game!</title>
+</head>
+<body style="height:970px;background:linear-gradient(to bottom, rgb(148, 148, 38),green,blue);">
+    <h1 style="text-align:center;">The Great Number Game!</h1>
+    <h2 style="text-align:center;">Guess the number!</h2>
+    <h3 style="text-align:center;">The number is between 1-100!</h3>
+    <form action='/guess' method='post'>
+        <p style='text-align:center;display:inline-block;margin-left:577px;'>Guess:<input type='text' name='guess'></p>
+        <input type='submit' name='submission' value="go" style="width:30px;height:30px;border-radius:20px;text-align:left;background:linear-gradient(to top, rgb(88, 71, 88),rgb(102, 102, 179),rgb(91, 155, 91));display:inline-block;">
+    </form>
+    <p style="text-align:center;margin-top:77px;width:333px;height:100px;background:linear-gradient(to bottom, rgb(214, 143, 10),rgb(153, 144, 24),rgb(59, 158, 14));border-radius:15px;padding-top:75px;margin-left:533px;">The number was: {{ session['realnumber'] }}</p>
+    <p style="margin-left:650px;">{{ session['reply'] }}</p>
+    <form action='/refresh'>
+        <input type='submit' name='play_again' value='play again' style="width:222px;height:222px;border-radius:222px;text-align:left;background:linear-gradient(to top, rgb(88, 71, 88),rgb(102, 102, 179),rgb(91, 155, 91));display:inline-block;text-align:center;margin-left:590px;">
+    </form>
+</body>
+</html>
