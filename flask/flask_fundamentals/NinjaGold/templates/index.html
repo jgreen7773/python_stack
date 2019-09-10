@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jamie's NinjaGold</title>
+</head>
+<body style="width:1010px;height:970px;background:linear-gradient(to top right, cornsilk, rgb(177, 135, 19), cornsilk);">
+    <h1 style="text-align:center;border-bottom: 2px solid gold;">Play The Ninja Gold Game! You have 15 rounds to achieve 500 gold!</h1>
+    <p style="text-align:center;">
+        Your Gold:
+        <span>
+            {{ session['amount_gold'] }}
+        </span>
+    </p>
+    <form action='/process_money' method='post' style="display:inline-block;width:222px;height:222px;background:linear-gradient(to right, rgb(226, 196, 130),gold,rgb(226, 196, 130));border-radius:77.7px;margin:222px 25px 0px 10px;vertical-align:top;">
+        <h2 style="width:225px;margin:auto;text-align:center;margin:35px 0px 25px 0px;">The Farm</h2>
+        <h3 style="width:225px;margin:auto;text-align:center;margin:35px 0px 25px 0px;">(earns 10-20 gold)</h3>
+        <input type="hidden" name="building" value="farm">
+        <input type="submit" value="Grab gold!" style="margin:0px 75px 0px 70px;height:35px;width:85px;background-color:rgb(197, 142, 39);border-radius:7px;">
+    </form>
+    <form action='/process_money' method='post' style="display:inline-block;width:222px;height:222px;background:linear-gradient(to right, rgb(226, 196, 130),gold,rgb(226, 196, 130));border-radius:77.7px;margin:222px 10px 0px 10px;vertical-align:top;">
+        <h2 style="width:225px;margin:auto;text-align:center;margin:35px 0px 25px 0px;">The Cave</h2>
+        <h3 style="width:225px;margin:auto;text-align:center;margin:35px 0px 25px 0px;">(earns 5-10 gold)</h3>
+        <input type="hidden" name="building" value="cave">
+        <input type="submit" value="Grab gold!" style="margin:0px 75px 0px 70px;height:35px;width:85px;background-color:rgb(197, 142, 39);border-radius:7px;">
+    </form>
+    <form action='/process_money' method='post' style="display:inline-block;width:222px;height:222px;background:linear-gradient(to right, rgb(226, 196, 130),gold,rgb(226, 196, 130));border-radius:77.7px;margin:222px 10px 0px 10px;vertical-align:top;">
+        <h2 style="width:225px;margin:auto;text-align:center;margin:35px 0px 25px 0px;">The House</h2>
+        <h3 style="width:225px;margin:auto;text-align:center;margin:35px 0px 25px 0px;">(earns 2-5 gold)</h3>
+        <input type="hidden" name="building" value="house">
+        <input type="submit" value="Grab gold!" style="margin:0px 75px 0px 70px;height:35px;width:85px;background-color:rgb(197, 142, 39);border-radius:7px;">
+    </form>
+    <form action='/process_money' method='post' style="display:inline-block;width:222px;height:222px;background:linear-gradient(to right, rgb(226, 196, 130),gold,rgb(226, 196, 130));border-radius:77.7px;margin:222px 10px 0px 25px;vertical-align:top;">
+        <h2 style="width:225px;margin:auto;text-align:center;margin:35px 0px 25px 0px;">The Casino</h2>
+        <h3 style="width:225px;margin:auto;text-align:center;margin:35px 0px 25px 0px;">(earns/takes 0-50 gold)</h3>
+        <input type="hidden" name="building" value="casino">
+        <input type="submit" value="Grab gold!" style="margin:0px 75px 0px 70px;height:35px;width:85px;background-color:rgb(197, 142, 39);border-radius:7px;">
+    </form>
+    <ul name="activities" style="overflow:scroll;height:125px;background:linear-gradient(to top right, rgb(177, 135, 19), cornsilk, rgb(177, 135, 19));border-top-left-radius:75px;padding-left:70px;">
+        {{ session['activity_log'] }}
+    </ul>
+    <form action='/play_again'>
+        <input type="submit" name="reset" value="Play Again!" style="height:35px;width:85px;background-color:rgb(197, 142, 39);border-radius:7px;margin-left:469px;">
+    </form>
+</body>
+</html>
