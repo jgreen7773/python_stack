@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Time Display Assignment</title>
+    {%load static%}
+    <link rel="stylesheet" type="text/css" href="{% static 'time_display_app/css/style.css' %}">
 </head>
-<body style="width:970px;height:970px;background-color:rgb(51, 74, 95);margin:auto;">
-    <div style="margin-top:150px;width:222px;height:47px;border:1px solid orange;padding:20px 0px 0px 77px;margin-left:222px;">
+<body>
+    <div class="b1">
         Current Time and Date:
     </div>
-    <div style="margin-top:50px;width:444px;height:105px;border:1px solid orange;padding:20px 0px 0px 288px;">
+    <div class="b2">
         {{ time }}
     </div>
 </body>

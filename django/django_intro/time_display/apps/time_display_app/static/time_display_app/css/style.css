@@ -1,0 +1,27 @@
+body{
+    width:970px;
+    height:970px;
+    background-color:rgb(51, 74, 95);
+    margin:auto;
+}
+
+
+
+.b1{
+    margin-top:150px;
+    width:222px;
+    height:47px;
+    border:1px solid orange;
+    padding:20px 0px 0px 77px;
+    margin-left:222px;
+}
+
+
+
+.b2{
+    margin-top:50px;
+    width:444px;
+    height:105px;
+    border:1px solid orange;
+    padding:20px 0px 0px 288px;
+}
