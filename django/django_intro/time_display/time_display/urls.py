@@ -17,6 +17,7 @@ from django.conf.urls import url, include
 # from django.contrib import admin
 
 urlpatterns = [
+    url(r'^rwg/', include('apps.rwg_app.urls')),
     url(r'^', include('apps.time_display_app.urls')),
 ]
 

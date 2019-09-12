@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Random Word Generator</title>
+</head>
+<body style="width:970px;height:970px;margin:auto;background-color:rgb(84, 59, 151);">
+    <h2>Random Word (attempt #{{request.session.counter}})</h2>
+    <div name="string" style="font-size:60px;padding-top:149px;text-align:center;width:777px;height:222px;border:1px solid rgb(82, 82, 245);border-radius:55px;">
+        {{request.session.string}}
+    </div>
+    <form action="/rwg/" method="POST" name="form">
+        {% csrf_token %}
+        <input type="submit" name="counter" value="Generate" style="margin-top:15px;width:222px;height:55px;background-color:rgb(84, 59, 151);border:1px solid rgb(82, 82, 245);border-radius:25px;">
+    </form>
+</body>
+</html>

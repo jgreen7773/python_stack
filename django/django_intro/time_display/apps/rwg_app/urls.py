@@ -1,6 +1,8 @@
 from django.conf.urls import url
 from . import views
 
-urlpatterns = [
+urlpatterns= [
     url(r'^$', views.index),
+    url(r'^rwg$', views.index),
+    url(r'reset/$', views.reset)
 ]
