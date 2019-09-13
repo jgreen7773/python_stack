@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jamie's Ninja Gold T(dj)ango</title>
+</head>
+<body style="width:1010px;height:970px;background:linear-gradient(to top right, cornsilk, rgb(177, 135, 19), cornsilk);margin:auto;border-right:2px solid gold;border-left:2px solid gold;border-radius:33px;">
+    <h1 style="text-align:center;border-bottom: 2px solid gold;">Play The Ninja Gold T(dj)ango Game! You have 15 rounds to achieve {{ request.session.amount_win }} gold!</h1>
+    <!-- <form action='/process_money' method='post' style="border:2px solid gold;border-radius:20px;width:333px;height:222px;padding-bottom:22px;padding-left:10px;margin-left:10px;">
+        <p>How many tries do you need to win?</p>
+        {% csrf_token %}
+        <input type="number" name="tries" style="display:inline-block;width:111px;height:22px;margin-left:188px;margin-bottom:15px;margin-right:10px;">
+        <p>And how much gold should you need to aquire to win?</p>
+        {% csrf_token %}
+        <input type="number" name="amount_win" style="display:inline-block;width:111px;height:22px;margin-left:188px;margin-bottom:10px;">
+        <input type="submit" name="submit_conditions" value="Play!" style="height:35px;width:85px;background-color:rgb(197, 142, 39);border-radius:7px;margin-left:15px;">
+    </form> -->
+    <p style="text-align:center;">
+        Your Gold:
+        <span>
+            {{ request.session.amount_gold }}
+        </span>
+    </p>
+    <p style="text-align:center;">
+        Your Tries:
+        <span>
+            {{ request.session.counter }}
+        </span>
+    </p>
+    <p name="fail" style="text-align:center;color:orange;">
+        <span>
+            {{ request.session.fail }}
+        </span>
+    </p>
+    <form action='/process_money' method='post' style="display:inline-block;width:222px;height:222px;background:linear-gradient(to right, rgb(226, 196, 130),gold,rgb(226, 196, 130));border-radius:77.7px;margin:111px 25px 0px 10px;vertical-align:top;">
+        {% csrf_token %}
+        <h2 style="width:225px;margin:auto;text-align:center;margin:35px 0px 25px 0px;">The Farm</h2>
+        <h3 style="width:225px;margin:auto;text-align:center;margin:35px 0px 25px 0px;">(earns 10-20 gold)</h3>
+        <input type="hidden" name="building" value="farm">
+        <input type="submit" value="Grab gold!" style="margin:0px 75px 0px 70px;height:35px;width:85px;background-color:rgb(197, 142, 39);border-radius:7px;">
+    </form>
+    <form action='/process_money' method='post' style="display:inline-block;width:222px;height:222px;background:linear-gradient(to right, rgb(226, 196, 130),gold,rgb(226, 196, 130));border-radius:77.7px;margin:111px 10px 0px 10px;vertical-align:top;">
+        {% csrf_token %}
+        <h2 style="width:225px;margin:auto;text-align:center;margin:35px 0px 25px 0px;">The Cave</h2>
+        <h3 style="width:225px;margin:auto;text-align:center;margin:35px 0px 25px 0px;">(earns 5-10 gold)</h3>
+        <input type="hidden" name="building" value="cave">
+        <input type="submit" value="Grab gold!" style="margin:0px 75px 0px 70px;height:35px;width:85px;background-color:rgb(197, 142, 39);border-radius:7px;">
+    </form>
+    <form action='/process_money' method='post' style="display:inline-block;width:222px;height:222px;background:linear-gradient(to right, rgb(226, 196, 130),gold,rgb(226, 196, 130));border-radius:77.7px;margin:111px 10px 0px 10px;vertical-align:top;">
+        {% csrf_token %}
+        <h2 style="width:225px;margin:auto;text-align:center;margin:35px 0px 25px 0px;">The House</h2>
+        <h3 style="width:225px;margin:auto;text-align:center;margin:35px 0px 25px 0px;">(earns 2-5 gold)</h3>
+        <input type="hidden" name="building" value="house">
+        <input type="submit" value="Grab gold!" style="margin:0px 75px 0px 70px;height:35px;width:85px;background-color:rgb(197, 142, 39);border-radius:7px;">
+    </form>
+    <form action='/process_money' method='post' style="display:inline-block;width:222px;height:222px;background:linear-gradient(to right, rgb(226, 196, 130),gold,rgb(226, 196, 130));border-radius:77.7px;margin:111px 10px 0px 25px;vertical-align:top;">
+        {% csrf_token %}
+        <h2 style="width:225px;margin:auto;text-align:center;margin:35px 0px 25px 0px;">The Casino</h2>
+        <h3 style="width:225px;margin:auto;text-align:center;margin:35px 0px 25px 0px;">(earns/takes 0-50 gold)</h3>
+        <input type="hidden" name="building" value="casino">
+        <input type="submit" value="Grab gold!" style="margin:0px 75px 0px 70px;height:35px;width:85px;background-color:rgb(197, 142, 39);border-radius:7px;">
+    </form>
+    <ul style="overflow:scroll;height:125px;background:linear-gradient(to top right, rgb(177, 135, 19), cornsilk, rgb(177, 135, 19));border-top-left-radius:75px;padding-left:70px;list-style-type:none;">
+        {% for activity in request.session.activity_log %}
+        <li class="activities" value="the_log">
+            {{ activity }}
+        </li>
+        {% endfor %}
+    </ul>
+    <form action='/reset' method="post" name='reset_button'>
+        {% csrf_token %}
+        <input type="submit" name="reset" value="Play Again!" style="height:35px;width:85px;background-color:rgb(197, 142, 39);border-radius:7px;margin-left:469px;">
+    </form>
+</body>
+</html>
