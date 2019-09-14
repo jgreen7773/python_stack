@@ -1,0 +1,90 @@
+from apps.users_app.models import User
+
+
+
+User.objects.create(first_name="Corbin", last_name="Dallas", email_addre
+   ...: ss="C(b)D(Texas)@texas.com", age='33', created_at="auto_now_add=True", u
+   ...: pdated_at="auto_now=True")
+
+
+
+User.objects.create(first_name="Trey", last_name="Tills_the_dollas", email_address="smokeypoint@thejoins.com", age=18)
+
+
+
+User.objects.create(first_name="Cheerios", last_name="Basil_Pesto", email_address="snakes", age=19)
+
+
+
+User.objects.create(first_name="Corbin", last_name="Dallas", email_addre
+   ...: ss="C(b)D(Texas)@texas.com", age='33')
+
+
+
+exit()
+
+
+
+python manage.py makemigrations
+
+
+
+python manage.py migrate
+
+
+
+python manage.py shell
+
+
+
+from apps.users_app.models import User
+
+
+
+all = User.objects.get().values()
+all
+
+
+
+last = User.objects.last()
+last
+
+
+
+first = User.objects.first()
+first
+
+
+
+three = User.objects.get(last_name="Basil_Pesto")
+
+
+
+three.last_name = "Pancakes"
+
+
+
+three.save()
+
+
+
+deleteuser2 = User.objects.get(id=2)
+
+
+
+deleteuser2.delete()
+
+
+
+deleteuser2.save()
+
+
+
+User.objects.all().order_by("first_name")
+
+
+
+User.objects.all().order_by("-first_name")
+
+
+
