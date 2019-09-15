@@ -1,0 +1,159 @@
+python manage.py makemigrations
+python manage.py migrate
+python manage.py shell
+from apps.dojo_ninjas_app.models import *
+
+
+dojos.objects.create(name="Ryozan-Paku", city="Gunma", state="living")
+
+
+dojos.objects.create(name="Mitziushi", city="Sashumi", state="Unknown")
+
+
+dojos.objects.create(name="Tsukimiri", city="Orotiagito", state="Sange")
+
+
+delete1 = dojos.objects.get(id=1)
+
+
+delete2 = dojos.objects.get(id=2)
+
+
+delete3 = dojos.objects.get(id=3)
+
+
+delete1.delete()
+
+
+delete2.delete()
+
+
+delete3.delete()
+
+
+delete1.save()                                                         
+
+In [12]: delete2.save()                                                         
+
+In [13]: delete3.save()
+
+
+dojos.objects.create(name="Musashi", city="Ryozan-Paku", state="Tsukimiri")
+Out[2]: <dojos: dojos object>
+
+In [3]: dojos.objects.create(name="Orotiagito", city="Sange", state="Yamato")   
+Out[3]: <dojos: dojos object>
+
+In [4]: dojos.objects.create(name="Shichishito", city="Yasha", state="Kusanagi")
+Out[4]: <dojos: dojos object>
+
+
+ninjas.objects.create(dojo_id=3, first_name="Kenichi", last_name="Shirohama")
+
+
+ninjas.objects.create(dojo_id=3, first_name="Nakedu", last_name="Kitashi")
+
+
+ninjas.objects.create(dojo_id=3, first_name="Miu", last_name="Ferrengi")
+
+
+ninjas.objects.create(dojo_id=2, first_name="Appa", last_name="Thai")
+
+
+ninjas.objects.create(dojo_id=2, first_name="Master", last_name="Akkaki")
+
+
+ninjas.objects.create(dojo_id=2, first_name="Kensei", last_name="Ma")
+
+
+ninjas.objects.create(dojo_id=1, first_name="Akisame", last_name="Koetsuji")
+
+
+ninjas.objects.create(dojo_id=1, first_name="Shigure", last_name="Kosaka")
+
+
+ninjas.objects.create(dojo_id=1, first_name="Shio", last_name="Sakaki")
+
+
+ninjas.objects.all().values()
+
+
+
+n1 = ninjas.objects.get(first_name="Kenichi")                          
+
+In [19]: n2 = ninjas.objects.get(first_name="Nakedu")                           
+
+In [20]: n3 = ninjas.objects.get(first_name="Miu")                              
+
+In [21]: n4 = ninjas.objects.get(first_name="Appa")                             
+
+In [22]: n5 = ninjas.objects.get(first_name="Master")                           
+
+In [23]: n6 = ninjas.objects.get(first_name="Kensei")                           
+
+In [24]: n7 = ninjas.objects.get(first_name="Akisame")                          
+
+In [25]: n8 = ninjas.objects.get(first_name="Shigure")                          
+
+In [26]: n9 = ninjas.objects.get(first_name="Shio")
+
+
+n1.dojo_id = dojos.objects.get(id=9)                                   
+
+In [13]: n2.dojo_id = dojos.objects.get(id=9)                                   
+
+In [14]: n3.dojo_id = dojos.objects.get(id=9)                                   
+
+In [15]: n4.dojo_id = dojos.objects.get(id=8)                                   
+
+In [16]: n5.dojo_id = dojos.objects.get(id=8)                                   
+
+In [17]: n6.dojo_id = dojos.objects.get(id=8)                                   
+
+In [18]: n7.dojo_id = dojos.objects.get(id=7)                                   
+
+In [19]: n8.dojo_id = dojos.objects.get(id=7)                                   
+
+In [20]: n9.dojo_id = dojos.objects.get(id=7)
+
+
+first_dojo_ninjas = dojos.objects.filter(id=7)                         
+
+In [22]: last_dojo_ninjas = dojos.objects.filter(id=9)                          
+
+In [23]: last_dojo_ninjas                                                       
+Out[23]: <QuerySet [<dojos: dojos object>]>
+
+
+exit()
+
+
+python manage.py makemigrations
+
+
+EXITED THE TERMINAL
+OPENED AGAIN
+
+
+VSCODE - typed into models.py into the "desc" TextField(null=True)
+
+
+RE-READ ASSIGNMENT, UNTYPED null=True
+
+
+source my_environments/djangopy3Env/bin/activate
+
+
+entered in option 1) "old dojo"
+
+
+python manage.py migrate
+
+
+python manage.py shell
+
+
+from apps.dojo_ninjas_app.models import *
+
+
+dojos.objects.create(name="Hayato", city="Gunma", state="Honorary")
