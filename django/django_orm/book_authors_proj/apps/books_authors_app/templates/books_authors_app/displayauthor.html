@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Authors, Books.</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'books_authors_app/css/style.css' %}">
+</head>
+<body>
+    <div class="formwrapper">
+        <h2>{{ this_author.first_name }} {{ this_author.last_name }}</h2>
+        <p class="f">ID: {{ this_author.id }}</p>
+        <div>
+            Notes: 
+            <p class="t">
+                {{ this_author.notes }}
+            </p>
+        </div>
+        Books: 
+        <div class="n">
+            {% csrf_token %}
+            <ul>
+                {% for author in related_authors.all %}
+                <li><em>{{ author.title }}</em></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% for author in all_books %}
+    <form action="/authors/{{ author.id }}" method="POST" class="tablewrapper">
+    {% endfor %}
+        {% csrf_token %}
+        <select name="addbooktoauthor">
+            <option value="select">Select a Book</option>
+            {% for i in all_books %}
+            <option value="addsbook">{{ i.title }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Add">
+    </form>
+</body>
+</html>
