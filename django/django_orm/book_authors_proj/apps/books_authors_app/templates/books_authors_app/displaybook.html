@@ -34,7 +34,7 @@
         <select name="addauthortobook">
             <option value="select">Select an Author</option>
             {% for i in all_authors %}
-            <option value="addsauthor">{{ i.first_name }} {{ i.last_name }}</option>
+            <option value="{{ i.id }}">{{ i.id }} {{ i.first_name }} {{ i.last_name }}</option>
             {% endfor %}
         </select>
         <input type="submit" value="Add">
