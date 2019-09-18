@@ -20,7 +20,6 @@
         </div>
         Books: 
         <div class="n">
-            {% csrf_token %}
             <ul>
                 {% for author in related_authors.all %}
                 <li><em>{{ author.title }}</em></li>
@@ -28,9 +27,7 @@
             </ul>
         </div>
     </div>
-    {% for author in all_books %}
-    <form action="/authors/{{ author.id }}" method="POST" class="tablewrapper">
-    {% endfor %}
+    <form action="/authors/{{ this_author.id }}" method="POST" class="tablewrapper">
         {% csrf_token %}
         <select name="addbooktoauthor">
             <option value="select">Select a Book</option>

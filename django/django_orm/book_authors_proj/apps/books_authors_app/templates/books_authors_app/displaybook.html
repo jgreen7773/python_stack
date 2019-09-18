@@ -27,9 +27,7 @@
             </ul>
         </div>
     </div>
-    {% for book in all_authors %}
-    <form action="/books/{{ book.id }}" method="POST" class="tablewrapper">
-    {% endfor %}
+    <form action="/books/{{ this_book.id }}" method="POST" class="tablewrapper">
         {% csrf_token %}
         <select name="addauthortobook">
             <option value="select">Select an Author</option>

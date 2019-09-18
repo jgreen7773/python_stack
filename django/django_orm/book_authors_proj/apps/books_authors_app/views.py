@@ -36,8 +36,8 @@ def displaybook(request, book_id):
         return render(request, 'books_authors_app/displaybook.html', context)
     if request.method == "POST":
         addbook = Book.objects.get(id=book_id)
-        addbook.Publishers.add(Book.objects.get(id=request.POST['addauthortobook']))
-        return redirect('/books/<id>')
+        addbook.Publishers.add(Author.objects.get(id=request.POST['addauthortobook']))
+        return redirect(f"/books/{book_id}")
 
 def displayauthor(request, author_id):
     if request.method == "GET":
@@ -52,5 +52,5 @@ def displayauthor(request, author_id):
         return render(request, 'books_authors_app/displayauthor.html', context)
     if request.method == "POST":
         addauthor = Author.objects.get(id=author_id)
-        addauthor.books.add(Author.objects.get(id=request.POST['addbooktoauthor']))
-        return redirect('/authors/<id>')
+        addauthor.books.add(Book.objects.get(id=request.POST['addbooktoauthor']))
+        return redirect(f"/authors/{author_id}")
