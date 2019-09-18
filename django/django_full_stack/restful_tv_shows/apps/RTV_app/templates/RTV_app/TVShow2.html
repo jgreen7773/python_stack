@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Restful TV Shows</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'RTV_app/css/style.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <h1 style="border-right:1px solid grey;display:inline-block;margin-right:0px;">TV Show </h1><h1 style="display:inline-block;border-left:1px solid grey;margin-left:0px;">{{ described_show.title }}</h1>
+        <a href="/shows" class="a">Go Back</a>
+        <p style="margin-left:25px;">Title: <span>{{ described_show.title }}</span></p>
+        <p style="margin-left:25px;">Network: <span>{{ described_show.network }}</span></p>
+        <p style="margin-left:25px;">Release Date: <span>{{ described_show.date }}</span></p>
+        <p style="margin-left:25px;margin-bottom:240px;">Description: <span>{{ described_show.desc }}</span></p>
+        <p style="margin-left:25px;">Last Updated: <span>{{ described_show.updated_at }}</span></p>
+        <p><a href="/shows/{{ described_show.id }}/edit" class="b1" name="edited_show">Edit</a><a href="/shows" class="b2" style="width:300px;">Delete show from Main Page</a></p>
+    </div>
+</body>
+</html>
