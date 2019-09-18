@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Restful TV Shows</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'RTV_app/css/style.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Edit Show 2</h1>
+        <a href="/shows" class="a">Go Back</a>
+        <form action="/shows/{{ show_id }}/edit" method="POST">
+            {% csrf_token %}
+            <p>Title</p>
+            <input type="text" name="Title" class="input">
+            <div class="network">
+                <p>Network</p>
+                <input type="text" name="Network">
+            </div>
+            <div class="release">
+                <p>Release Date</p>
+                <input type="datetime-local" name="ReleaseDate">
+            </div>
+            <p>Description</p>
+            <input type="textarea" name="Description" class="input">
+            <input type="submit" name="Update_Button" value="Update">
+        </form>
+        <a href="/shows/{{ id }}">Go to Show</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+*{
+    margin:auto;
+    padding:auto;
+}
+body{
+    width:970px;
+    height:970px;
+    background-color:rgb(2, 19, 58);
+    margin:auto;
+}
+.wrapper{
+    width: 777px;
+    height:888px;
+    background:linear-gradient(to top right, yellow,green,blue);
+    border-top-right-radius:200px;
+    border-bottom-left-radius:200px;
+    padding:10px;
+    margin-top:20px;
+    border:1px dotted grey;
+}
+h1{
+    margin: 20px 0px 15px 20px;
+    padding: 30px;
+}
+.a{
+    margin-left:577px;
+}
+table{
+    border:1px dotted grey;
+    border-radius:5px;
+}
+tr{
+    border:1px dotted grey;
+    border-radius:5px;
+}
+th{
+    border:1px dotted grey;
+    border-radius:5px;
+}
+td{
+    border:1px dotted grey;
+    border-radius:5px;
+}
+form{
+    padding: 30px;
+    border:1px dotted grey;
+    border-radius:5px;
+}
+.input{
+    margin: 0px 0px 55px 0px;
+    display:block;
+    width:644px;
+}
+.network{
+    margin: 0px 0px 55px 0px;
+    display:inline-block;
+    width:333px;
+}
+.release{
+    margin: 0px 0px 55px 0px;
+    display:inline-block;
+    width:333px;
+}
+input{
+    width:308px;
+}
+p{
+    margin: 33px 0px 33px 0px;
+    width:888px;
+}
+.b1{
+    margin: -18.5 0px 0px 0px;
+    width:55px;
+    height:10px;
+    display:inline-block;
+    border-right:1px solid grey;
+    padding:33px;
+}
+.b2{
+    margin: -18.5 0px 0px 0px;
+    width:55px;
+    height:10px;
+    display:inline-block;
+    border-left:1px solid grey;
+    padding:33px;
+}
+.b3{
+    width:55px;
+    height:10px;
+    display:inline-block;
+    border-left:1px solid grey;
+    padding:1px;
+    margin:15px;
+}
