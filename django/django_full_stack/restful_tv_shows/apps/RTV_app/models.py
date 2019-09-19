@@ -16,14 +16,14 @@ class ShowManager(models.Manager):
         if len(postData['Description']) < 10:
             errors['description1'] = "Description should be atleast ten characters."
         
+        if len(postData['Description']) < 10 and len(postData['Description']) > 0:
+            errors['description2'] = "Description should be atleast ten characters."
+        
         # entered_date = datetime.datetime.strptime(postData['ReleaseDate'], "%Y-%a-%d").date()
         # today_date = datetime.date.today()
         
         # if entered_date > today_date:
         #     errors['releaseDate'] = "Date must be in the past."
-        
-        if len(postData['Description']) < 10 and len(postData['Description']) > 0:
-            errors['description2'] = "Description should be atleast ten characters."
         
         return errors
 

@@ -23,7 +23,7 @@ def AddNewShow(request):
         if len(errors) > 0:
             for errors, value in errors.items():
                 messages.error(request, value)
-                return redirect('/shows/new')
+            return redirect('/shows/new')
         else:
             Show.objects.create(title=request.POST['Title'], network=request.POST['Network'], date=request.POST['ReleaseDate'], desc=request.POST['Description'])
             return redirect(f"/shows")
@@ -39,14 +39,11 @@ def EditShow2(request, edit_show):
         if len(errors) > 0:
             for errors, value in errors.items():
                 messages.error(request, value)
-                return redirect(f'/shows/{edit_show}/edit')
+            return redirect(f'/shows/{edit_show}/edit')
         editshow = Show.objects.get(id=edit_show)
         editshow.title = request.POST['Title']
-        editshow.save()
         editshow.network = request.POST['Network']
-        editshow.save()
         editshow.date = request.POST['ReleaseDate']
-        editshow.save()
         editshow.desc = request.POST['Description']
         editshow.save()
         return redirect(f'/shows/{edit_show}')
