@@ -59,7 +59,7 @@ def Destroy(request, id):
     if request.method == "GET":
         destroydata = Show.objects.get(id=id)
         context = {
-            "destroy": destroydata.delete()
+            "destroy": destroydata.delete()templa
         }
         return redirect('/shows')
 

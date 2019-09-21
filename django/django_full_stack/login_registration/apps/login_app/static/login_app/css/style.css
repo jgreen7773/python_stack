@@ -1,0 +1,44 @@
+*{
+    margin:auto;
+    padding:0px;
+}
+body{
+    margin:auto;
+    padding: 25px;
+    background-color:sandybrown;
+}
+.reg{
+    width:555px;
+    text-align:center;
+    display:inline-block;
+    vertical-align:top;
+    background:radial-gradient(rgb(224, 106, 52),rgb(253, 153, 116),sandybrown);
+}
+.log{
+    width:555px;
+    text-align:center;
+    display:inline-block;
+    background:radial-gradient(rgb(224, 106, 52),rgb(253, 153, 116),sandybrown);
+}
+input{
+    display:block;
+    margin-bottom: 35px;
+    width:333px;
+    height:12px;
+}
+h1{
+    margin-bottom:77px;
+}
+form{
+    border:3px dotted rgba(255, 127, 80, 0.356);
+    height:500px;
+    background:radial-gradient(rgb(224, 106, 52),rgb(253, 153, 116),sandybrown);
+    border-radius:88px;
+    margin-left:33px;
+    margin-right:33px;
+}
+p{
+    width:222px;
+    color: purple;
+    
+}
