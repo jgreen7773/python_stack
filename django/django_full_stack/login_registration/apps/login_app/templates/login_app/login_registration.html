@@ -39,8 +39,8 @@
         {% endif %}
         <form action="/processlog" method="POST" name="log">
             {% csrf_token %}
-            <p>Email</p> <input type="email" name="email">
-            <p>Password</p> <input type="password" name="password">
+            <p>Email</p> <input type="email" name="lemail">
+            <p>Password</p> <input type="password" name="lpassword">
             <input type="submit" name="lsubmit">
         </form>
     </div>

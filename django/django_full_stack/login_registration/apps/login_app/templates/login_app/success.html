@@ -9,7 +9,8 @@
     <link rel="stylesheet" type="text/css" href="{% static 'login_app/css/style.css' %}">
 </head>
 <body>
-    <h2 style="display:inline-block;width:333px;">Success! You Logged in!</h2>
+    <h2 style="display:inline-block;width:333px;">Success! {{ logged_user.first_name }}, has logged in!</h2>
     <a href="/logout">Log Out</a>
+    <h3 style="display:block;width:333px;">Successfully registered!</h3>
 </body>
 </html>
