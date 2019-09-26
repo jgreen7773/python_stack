@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login To The Wall</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'wall_app/css/style.css' %}">
+</head>
+<body>
+    <div class="log">
+        <h1>Login</h1>
+        {% if messages.extratags == login_failed %}
+        <ul class="messages">    
+            {% for message in messages %}    
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li><br>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <form action="/processlogin" method="POST" name="log">
+            {% csrf_token %}
+            <p>Email</p> <input type="email" name="lemail" class="regloginput">
+            <p>Password</p> <input type="password" name="lpassword" class="regloginput">
+            <input type="submit" name="lsubmit" class="reglogsubmit">
+        </form>
+        <a href="/signup">Sign Up</a>
+    </div>
+</body>
+</html>

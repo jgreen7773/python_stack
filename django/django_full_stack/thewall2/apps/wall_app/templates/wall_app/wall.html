@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome To The Wall</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'wall_app/css/style.css' %}">
+</head>
+<body>
+    <div class="headerwrapper">
+        <h2>Welcome To The Wall!</h2>
+        <h4>Welcome {{ current_user.alias }}</h4>
+        <a href="/logout">Log Off</a>
+    </div>
+    <div class="contentwrapper">
+        <form action="/wall" method="POST" class="form1">
+            {% csrf_token %}
+            <h3>Post a message:</h3>
+            <input type="textarea" name="message" class="postingbox1">
+            <input type="submit" name="postmessage" value="Post!" class="submitmessage">
+        </form>
+        <ul>
+            <!-- figure out a clean looking way to add a remove post button -->
+            <!-- {% comment %}
+            {% for a in a_messages.all %}
+                <li name="post_message">{{ message_poster.alias }} | {{ a.message }}</li>
+                {% for b in b_comments.all %}
+                    <li name="post_comment">{{ comment_poster.alias }} | {{ b.comment }}</li>
+                {% endfor %}
+            {% endfor %}
+            <form action="/wall" method="POST" class="form2">
+                {% csrf_token %}
+                {% if request.session.filter.lemail %}
+                    {% block input %}
+                        <h5>Post a comment:</h5>
+                        <input type="textarea" name="comment" class="postingbox2">
+                        <input type="submit" name="postcomment" class="submitcomment">
+                    {% endblock %}
+                {% endif %}
+            {% endcomment %} -->
+
+            <!-- {% comment %}
+            {% for Message in Messages %}
+
+            <li>{{Message.message_poster.first_name}} wrote at {{Message.created_at}}:</li>
+            <li>{{Message.message}}</li>
+            <h5>Post a comment:</h5>
+            <form action='/wall' method='POST'>
+                {% csrf_token %}
+                <input type="textarea" name="comment" class="postingbox2">
+                <input type="submit" name="postcomment" class="submitcomment">
+            </form>
+
+            {% endfor %}
+            {% endcomment %} -->
+            {% for Message in Messages %}
+                <li name="post_message">{{ Message.message_poster.alias }} | {{ Message.created_at }}</li>
+                <li>{{ Message.message }}</li>
+                <form action="/wall" method="POST" class="form2">
+                {% csrf_token %}
+                    <h5>Post a comment:</h5>
+                    <input type="textarea" name="comment" class="postingbox2">
+                    <input type="submit" name="postcomment" class="submitcomment">
+                </form>
+                {% for Comment in Comments %}
+                    <li name="post_comment">{{ Comment.comment_poster.alias }} | {{ Comment.created_at }}</li>
+                    <li>{{ Comment.comment }}</li>
+                {% endfor %}
+            {% endfor %}
+            <!-- if a user posts a message and they logged off and are not currently -->
+            <!-- in session, that user should be set to comment_poster through context using != conditional-->
+            <!-- nevermind, i don't actually need to keep track of that. -->
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome to Wall</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'wall_app/css/style.css' %}">
+</head>
+<body>
+    <div class="headerwrapper">
+        <h2>Welcome to the wall</h2>
+        <h4>Welcome </h4>
+        <a href="/logout">Log Off</a>
+    </div>
+    <div class="contentwrapper">
+        <ul>
+            <li><h4>{{ current_user.alias }}</h4></li>
+            {% for message in user_messages %}
+                <li><p name="post_message_list">{{ message.message }}</p><a href="/delete">Remove Post</a></li>
+            {% endfor %}
+            {% if messages.extra_tags == post_message_requirements %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li><br>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </ul>
+        <form action="/processmessage" method="POST" class="form1">
+            {% csrf_token %}
+            <h3>Post a message:</h3>
+            <input type="textarea" name="typemessage" class="postingbox1">
+            <input type="submit" name="postmessage" class="submitmessage">
+        </form>
+        <ul>
+            <li><h4>{{ current_user.alias }}</h4></li>
+            {% for comment in message.message_replied_on.all %}
+                <li><p name="post_comment_list">{{ comment.comment }}</p></li>
+            {% endfor %}
+            {% if messages.extra_tags == post_reply_requirements %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li><br>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </ul>
+        <form action="/processcomment" method="POST" class="form2">
+            {% csrf_token %}
+            <h5>Post a comment:</h5>
+            <input type="textarea" name="typecomment" class="postingbox2">
+            <input type="submit" name="postcomment" class="submitcomment">
+        </form>
+        <ul>
+            <li><h4>{{ current_user.alias }}</h4></li>
+            {% for message in user_messages %}
+                <li><p name="post_reply_list">{{ message.message }}</p></li>
+            {% endfor %}
+            {% if messages.extra_tags == post_reply_requirements %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li><br>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </ul>
+        <form action="processreply" method="POST" class="form3">
+            {% csrf_token %}
+            <h6>Post reply:</h6>
+            <input type="textarea" name="typereply" class="postingbox3">
+            <input type="submit" name="postreply" class="submitreply">
+        </form>
+    </div>
+</body>
+</html>

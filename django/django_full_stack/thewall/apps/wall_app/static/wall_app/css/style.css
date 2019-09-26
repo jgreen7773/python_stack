@@ -1,0 +1,117 @@
+*{
+    padding:0px;
+    margin:0px;
+}
+body{
+    background:radial-gradient(green,white,black);
+    width:970px;
+    height:970px;
+    margin:auto;
+}
+.headerwrapper{
+    width:950px;
+    height:44px;
+    border-bottom:2px solid grey;
+    padding:30px;
+    margin-bottom:30px;
+}
+h2{
+    display:inline-block;
+    width:333px;
+}
+h4{
+    display:inline-block;
+    width:488px;
+    text-align:right;
+    margin-right:15px;
+}
+a{
+    display:inline-block;
+}
+.contentwrapper{
+    width:970px;
+    height:900px;
+}
+.form1{
+    padding-left:33px;
+    height:auto;
+    width:970px;
+}
+.form2{
+    padding-left:66px;
+    height:auto;
+    width:970px;
+}
+.form3{
+    padding-left:99px;
+    height:auto;
+    width:970px;
+}
+.postingbox1{
+    width:799px;
+    height:55px;
+    border:1px solid rgb(151, 180, 233);
+    border-top-left-radius:15px;
+    border-bottom-left-radius:15px;
+}
+.postingbox2{
+    width:766px;
+    height:55px;
+    border:1px solid rgb(151, 180, 233);
+    border-top-left-radius:15px;
+    border-bottom-left-radius:15px;
+}
+.postingbox3{
+    width:733px;
+    height:55px;
+    border:1px solid rgb(151, 180, 233);
+    border-top-left-radius:15px;
+    border-bottom-left-radius:15px;
+}
+.submitmessage{
+    height:59px;
+    width:44px;
+    margin-left:-5px;
+    border-top-right-radius:15px;
+    border-top-left-radius:0px;
+    border-bottom-right-radius:15px;
+    border-bottom-left-radius:0px;
+    background-color:rgb(151, 180, 233);
+}
+.submitcomment{
+    height:57px;
+    width:44px;
+    margin-left:-4.5px;
+    border-top-right-radius:15px;
+    border-top-left-radius:0px;
+    border-bottom-right-radius:15px;
+    border-bottom-left-radius:0px;
+    background-color:rgb(151, 180, 233);
+}
+.submitreply{
+    height:56px;
+    width:44px;
+    margin-left:-4.5px;
+    border-top-right-radius:15px;
+    border-top-left-radius:0px;
+    border-bottom-right-radius:15px;
+    border-bottom-left-radius:0px;
+    background-color:rgb(151, 180, 233);
+}
+.reglogsubmit{
+    height:28px;
+    width:44px;
+    margin-left:-4px;
+    border-top-right-radius:15px;
+    border-top-left-radius:0px;
+    border-bottom-right-radius:15px;
+    border-bottom-left-radius:0px;
+    background-color:rgb(151, 180, 233);
+}
+.regloginput{
+    height:24px;
+    width:333px;
+}
+li{
+    list-style-type:none;
+}

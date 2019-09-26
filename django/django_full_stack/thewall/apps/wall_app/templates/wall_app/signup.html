@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login and Registration</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'wall_app/css/style.css' %}">
+</head>
+<body>
+    <div class="reg">
+        <h1>Registration</h1>
+        {% if messages.extra_tags == registration_failed %}
+        <ul class="messages">    
+            {% for message in messages %}    
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li><br>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <form action="/processregistration" method="POST" name="reg">
+            {% csrf_token %}
+            <p>Alias</p> <input type="input" name="alias" class="regloginput">
+            <p>First Name</p> <input type="input" name="f_name" class="regloginput">
+            <p>Last Name</p> <input type="input" name="l_name" class="regloginput">
+            <p>Email</p> <input type="email" name="email" class="regloginput">
+            <p>Password</p> <input type="password" name="password" class="regloginput">
+            <p>Confirm Password</p> <input type="password" name="cpassword" class="regloginput">
+            <input type="submit" name="rsubmit" class="reglogsubmit">
+        </form>
+        <a href="/login">Log In</a>
+    </div>
+</body>
+</html>

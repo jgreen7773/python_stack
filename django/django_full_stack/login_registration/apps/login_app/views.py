@@ -33,11 +33,10 @@ def processlog(request):
     return redirect('/')
 
 def logout(request):
-    request.session.clear()
+    request.session.flush()
     return redirect('/')
 
 def success(request):
-
     context = {
         "logged_user": user1.objects.get(id=request.session['lemail'])
     }
